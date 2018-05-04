@@ -1,0 +1,33 @@
+<div class="container">
+  <ngu-carousel #myCarousels1 [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()" (onMove)="onMoveData($event)"
+    [reset]="rsts" (initData)="getCarouselData($event)">
+    <ngu-tile NguCarouselItem *ngFor="let tile of categories; let i = index;">
+      <a href="#topic" class="f">
+        <div class="wBg">
+          <div class="tile" [style.background]="'url(' + tile.img + ')'">
+            <!-- <h1>{{i}}</h1> -->
+          </div>
+          <h4>{{tile.name}}</h4>
+          <p>Games :</p>
+
+          <button mat-icon-button color="warn">
+            <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+          </button>
+          <a class = "ff" mat-raised-button routerLink=".">Readmore..</a>
+          <!-- <button mat-mini-fab>
+          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        </button> -->
+        </div>
+      </a>
+    </ngu-tile>
+    <button NguCarouselPrev class="leftRs">&lt;</button>
+    <button NguCarouselNext class="rightRs">&gt;</button>
+
+    <!-- <div NguCarouselPoint>
+      <div>{{myCarousels1.pointers+1}}/{{myCarousels1.pointNumbers.length}}</div>
+    </div> -->
+  </ngu-carousel>
+</div>
+<script>
+
+</script>
